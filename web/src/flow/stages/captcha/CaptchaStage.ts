@@ -135,9 +135,8 @@ export class CaptchaStage extends BaseStage<CaptchaChallenge, CaptchaChallengeRe
         if (!Object.hasOwn(window, "turnstile")) {
             return false;
         }
-        this.captchaInteractive = false;
-        document.body.appendChild(this.captchaContainer);
-        (window as unknown as TurnstileWindow).turnstile.render(`#${captchaContainerID}`, {
+        this.captchaInteractive = true;
+        (window as unknown as TurnstileWindow).turnstile.render(this.captchaContainer, {
             sitekey: this.challenge.siteKey,
             callback: this.onTokenChange,
         });
