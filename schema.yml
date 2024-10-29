@@ -39220,7 +39220,10 @@ components:
           type: string
         js_url:
           type: string
+        interactive:
+          type: boolean
       required:
+      - interactive
       - js_url
       - pending_user
       - pending_user_avatar
@@ -39276,6 +39279,8 @@ components:
           type: string
         api_url:
           type: string
+        interactive:
+          type: boolean
         score_min_threshold:
           type: number
           format: double
@@ -39322,6 +39327,8 @@ components:
         api_url:
           type: string
           minLength: 1
+        interactive:
+          type: boolean
         score_min_threshold:
           type: number
           format: double
@@ -42975,7 +42982,8 @@ components:
           readOnly: true
         spnego_server_name:
           type: string
-          description: Force the use of a specific server name for SPNEGO
+          description: Force the use of a specific server name for SPNEGO. Must be
+            in the form HTTP@hostname
         spnego_ccache:
           type: string
           description: Credential cache to use for SPNEGO in form type:residual
@@ -43144,7 +43152,8 @@ components:
             be in the form TYPE:residual
         spnego_server_name:
           type: string
-          description: Force the use of a specific server name for SPNEGO
+          description: Force the use of a specific server name for SPNEGO. Must be
+            in the form HTTP@hostname
         spnego_keytab:
           type: string
           writeOnly: true
@@ -47730,6 +47739,8 @@ components:
         api_url:
           type: string
           minLength: 1
+        interactive:
+          type: boolean
         score_min_threshold:
           type: number
           format: double
@@ -48448,7 +48459,8 @@ components:
             be in the form TYPE:residual
         spnego_server_name:
           type: string
-          description: Force the use of a specific server name for SPNEGO
+          description: Force the use of a specific server name for SPNEGO. Must be
+            in the form HTTP@hostname
         spnego_keytab:
           type: string
           writeOnly: true
